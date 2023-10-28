@@ -1,16 +1,13 @@
-# bmi
+# Bmi
 
 A new Flutter project.
 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# OutPut BMi App
+#FirstPage
+ App![Screenshot_1](https://github.com/Masumraj1/Bmi_Complete_App/assets/141552007/080e3a0b-af99-4d97-8126-86a1df6d2775)
+ 
+ #Secondpage
+![Screenshot_2](https://github.com/Masumraj1/Bmi_Complete_App/assets/141552007/b4b78589-03f9-4883-88d9-3a8ffb334b2d)
