@@ -1,31 +1,33 @@
 import 'package:flutter/material.dart';
 
 class SecondRoute extends StatefulWidget {
-  String masum;
+  String name;
 
-  SecondRoute({required this.masum});
+  SecondRoute({required this.name});
 
   @override
   State<SecondRoute> createState() => _SecondRouteState();
 }
 
 class _SecondRouteState extends State<SecondRoute> {
+
+
   TextEditingController heightController = TextEditingController();
-
   TextEditingController weightController = TextEditingController();
-
   double bmiResult = 0.0;
+  String bmistatus = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(20),
             child: SafeArea(
               child: Text(
-                "Hey, ${widget.masum}...Let's check your Bmi",
+                "Hey, ${widget.name}...Let's check your Bmi",
                 style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
               ),
             ),
@@ -177,6 +179,8 @@ class _SecondRouteState extends State<SecondRoute> {
           Container(
             child: InkWell(
               onTap: () {
+
+
                 double weight = double.parse(weightController.text);
                 double height = double.parse(heightController.text);
 
@@ -185,6 +189,18 @@ class _SecondRouteState extends State<SecondRoute> {
 
                 // bmi formula
                 double bmi = weight / (height * height);
+
+                // Set BMI category
+                if (bmi < 18.5) {
+                  bmistatus = 'Underweight,you must be eat nutritious food';
+                } else if (bmi >= 18.5 && bmi < 25) {
+                  bmistatus = 'Normal weight, Congratulations  ${widget.name} Perfect Health';
+                } else if (bmi >= 25 && bmi < 30) {
+                  bmistatus = 'Overweight,You have to eat less';
+                } else {
+                  bmistatus = 'Obese ,you must eat less';
+                }
+
                 setState(() {
                   bmiResult = bmi;
                 });
@@ -204,7 +220,14 @@ class _SecondRouteState extends State<SecondRoute> {
               ),
             ),
           ),
-          Text("Your BMI Result: $bmiResult",style: TextStyle(fontSize: 30,color: Colors.red),)
+          Text(
+            "Your BMI Result: $bmiResult",
+            style: TextStyle(fontSize: 20, color: Colors.red),
+          ),
+          Text(
+            "Status: $bmistatus",
+            style: TextStyle(fontSize: 30, color: Colors.blue),
+          ),
         ],
       ),
     );

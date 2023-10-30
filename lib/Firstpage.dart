@@ -64,6 +64,7 @@ class _FirstpageState extends State<Firstpage> {
                   border: InputBorder.none,
                   hintText: 'Name',
                   hintStyle: TextStyle(fontSize: 35),
+
                 ),
               ),
             ),
@@ -73,7 +74,7 @@ class _FirstpageState extends State<Firstpage> {
                 //   outputText = 'Input: ${_name.text}';
                 // });
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => SecondRoute(masum: masum.text)));
+                    builder: (context) => SecondRoute(name: masum.text)));
               },
               child: Container(
                 margin: EdgeInsets.only(top: 100),
